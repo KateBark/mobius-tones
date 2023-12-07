@@ -1,6 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+
 .about {
+  background-color: #374741;
+  padding: 1rem;
 
   &__blurb {
-    
+    color: white;
+    padding-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  &__bold-text {
+    font-weight: bold;
+    font-family: 'Cormorant Garamond', serif;
   }
 }

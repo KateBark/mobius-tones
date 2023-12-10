@@ -1,22 +1,63 @@
+@use "../../styles/partials/mixins" as *;
+
 .header {
   // background-color: #B8D8CC;
   // background-color: #556D64;
   background-color: #374741;
-  
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+  }
+
+  @include desktop {
+    padding: 0 8rem;
+  }
+
+
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+  }
 
   &__logo {
     height: 100px;
   }
 
   &__buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1rem;
 
+    @include tablet {
+      padding-bottom: 0;
+    }
   }
 
   &__button {
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    color: rgb(173, 168, 168);
 
+    @include tablet {
+      padding: .5rem 2rem;
+    }
+  }
+
+  &__button-text {
+    
+    font-size: .8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
   }
 
   &__button-active {
-
+    background-color: #556D64;
+    color: white;
   }
 }

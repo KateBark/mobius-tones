@@ -15,9 +15,9 @@ let { PORT, CORS_ORIGIN } = process.env;
 app.use(cors({ origin: CORS_ORIGIN }));
 app.use(express.json());
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 // OR
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 const videosRoute = require("./routes/videos");

@@ -1,11 +1,12 @@
+import HomeComponent from "../../components/home/home";
 import "./Home.scss";
 
-function Home() {
+function HomePage() {
   return (
     <main>
-
+      <HomeComponent />
     </main>
   );
 }
 
-export default Home;
+export default HomePage;

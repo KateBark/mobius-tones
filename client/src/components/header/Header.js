@@ -13,7 +13,8 @@ function Header() {
       </Link>
       <div className="header__buttons-container">
         <NavLink
-          to="/:mytones"
+          // to="/:mytones"
+          to="/mytones"
           className={({ isActive }) =>
             isActive
               ? "header__button header__button-active"
@@ -23,14 +24,14 @@ function Header() {
           <p className="header__button-text">My Tones</p>
         </NavLink>
         <NavLink
-          to="/upload"
+          to="/channel"
           className={({ isActive }) =>
             isActive
               ? "header__button header__button-active"
               : "header__button"
           }
         >
-          <p className="header__button-text">Upload</p>
+          <p className="header__button-text">Channel</p>
         </NavLink>
         <NavLink
           to="/about"

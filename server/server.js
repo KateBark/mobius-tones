@@ -23,6 +23,21 @@ app.use(express.urlencoded({ extended: true }));
 const videosRoute = require("./routes/videos");
 app.use("/", videosRoute);
 
+const tonesRoute = require("./routes/tones");
+app.use("/mytones", tonesRoute);
+
+// const channelRoute = require("./routes/channel");
+// app.use("/channel", channelRoute);
+
+// *****----------KEEP THESE--------------*****
+// const tonesRoute = require("./routes/tones");
+// app.use("/:mytones", tonesRoute);
+
+// const channelRoute = require("./routes/channel");
+// app.use("/channel", channelRoute);
+// *****----------------------------------*****
+
+
 // const API_KEY = "AIzaSyC2D_aMppXMsl4SDD75VD-aqDqYY6OzJd8"
 
 // Replace 'MY_API_KEY' with actual YouTube API key

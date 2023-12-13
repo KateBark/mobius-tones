@@ -6,6 +6,6 @@ const { v4: uuid4 } = require("uuid");
 
 // set up dynamic route for user-specific uploaded videos
 // router.route("/:mytones").get(tonesController.index);
-router.route("/mytones").get(tonesController.index);
+router.route("/:id").get(tonesController.index);
 
 module.exports = router;

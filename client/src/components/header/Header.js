@@ -14,7 +14,7 @@ function Header() {
       <div className="header__buttons-container">
         <NavLink
           // to="/:mytones"
-          to="/mytones"
+          to="/mytones/:id"
           className={({ isActive }) =>
             isActive
               ? "header__button header__button-active"

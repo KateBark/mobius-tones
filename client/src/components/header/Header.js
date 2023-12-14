@@ -3,7 +3,7 @@ import Logo from "../../assets/mobiustones-logo.jpeg";
 import { NavLink, Link, useParams } from "react-router-dom";
 
 function Header() {
-  const { myvids, mystuff } = useParams();
+  const { id } = useParams();
   return (
     <header className="header">
       <Link to="/">
@@ -14,7 +14,7 @@ function Header() {
       <div className="header__buttons-container">
         <NavLink
           // to="/:mytones"
-          to="/mytones/:id"
+          to={`/mytones/${id}`}
           className={({ isActive }) =>
             isActive
               ? "header__button header__button-active"

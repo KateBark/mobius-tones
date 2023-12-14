@@ -8,6 +8,27 @@ const index = (_req, res) => {
     .catch(err => res.status(400).send(`Could not retrieve videos: ${err}`));
 }
 
+const singleVideo = (req, res) => {
+  const { id } = req.params;
+  console.log("Single video Id: ", id);
+
+  knex("videos")
+    .where({ id })
+    .first()
+    .then(video => {
+      if (video) {
+        res.json(video);
+      } else {
+        res.status(404).json({ error: "Video not found"});
+      }
+    })
+    .catch(error => {
+      console.error("Error retrieving video data:", error);
+      res.status(500).json({ error: "Internal server error" });
+    });
+};
+
 module.exports = {
-  index
+  index,
+  singleVideo
 }

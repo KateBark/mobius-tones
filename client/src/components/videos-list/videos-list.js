@@ -1,16 +1,14 @@
 import "./videos-list.scss";
-import Video from "../video/video";
+import VideoComponent from "../video/video";
 
 function VideosList({ videos }) {
-  console.log(videos);
+  console.log(videos[0]);
   // console.log(videos.data.image);
   return (
     <div className="videos">
       <ul className="videos__list">
-        {videos.map(video => {
-          return (
-            <>
-              <Video
+        {videos.map(video => (
+              <VideoComponent
                 key={video.id}
                 videoId={video.id}
                 title={video.title}
@@ -18,12 +16,10 @@ function VideosList({ videos }) {
                 url={video.url}
                 artist={video.artist}
               />
-            </>
-          );
-        })}
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default VideosList;

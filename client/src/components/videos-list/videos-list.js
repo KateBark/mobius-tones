@@ -2,7 +2,7 @@ import "./videos-list.scss";
 import VideoComponent from "../video/video";
 
 function VideosList({ videos }) {
-  console.log(videos[0]);
+  // console.log(videos[0]);
   // console.log(videos.data.image);
   return (
     <div className="videos">

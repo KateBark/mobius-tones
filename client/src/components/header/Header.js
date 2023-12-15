@@ -4,6 +4,7 @@ import { NavLink, Link, useParams } from "react-router-dom";
 
 function Header() {
   const { id } = useParams();
+  // console.log(id)
   return (
     <header className="header">
       <Link to="/">
@@ -13,8 +14,9 @@ function Header() {
       </Link>
       <div className="header__buttons-container">
         <NavLink
-          // to="/:mytones"
-          to={`/mytones/${id}`}
+          // hard-coded id for demo purposes. once auth set-up, use useParams() for id:
+          // to={`/mytones/${id}`}
+          to={`/mytones/1`}
           className={({ isActive }) =>
             isActive
               ? "header__button header__button-active"

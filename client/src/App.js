@@ -8,18 +8,19 @@ import Channel from "./components/channel/channel";
 import VideoPlayer from "./components/video-player/VideoPlayer";
 
 function App() {
-  // let { id } = useParams();
+  let { id } = useParams();
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/:videoId" element={<VideoPlayer />} />
         {/* <Route path="/:mytones" element={<MyTones />} /> */}
         <Route path="/mytones/:id" element={<TonesComponent />} />
-        {/* <Route path="/:channel" element={<Channel />} /> */}
+        <Route path="/:channel" element={<Channel />} />
         {/* <Route path="/videos/:id" element={<VideoPlayer />} /> */}
         {/* <Route path="/video-player" element={<VideoPlayer />} /> */}
-        <Route path="/videos/:videoId" element={<VideoPlayer />} />
+        
         <Route path="/about" element={<About />} />
       </Routes>
       {/* <Footer /> */}

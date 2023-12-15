@@ -9,7 +9,7 @@ function VideoComponent(props) {
       {/* <img src="https://img.youtube.com/vi/oqOghpWHYio&list=OLAK5uy_nb8rNOWorj0XISXKSLgZDxXWMMrJr64M8/0.jpg"></img> */}
       {/* {props.id} */}
       {/* <Link to={`/mytones/${props.videoId}`}> */}
-      <Link to={`/videos/${props.videoId}`}>
+      <Link to={`/${props.videoId}`}>
         <video controls
           className="video__video"
           poster={props.poster}

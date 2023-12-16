@@ -6,7 +6,7 @@ function VideosList({ videos }) {
   // console.log(videos.data.image);
   return (
     <div className="videos">
-      <ul className="videos__list">
+      <div className="videos__list">
         {videos.map(video => (
               <VideoComponent
                 key={video.id}
@@ -17,7 +17,7 @@ function VideosList({ videos }) {
                 artist={video.artist}
               />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

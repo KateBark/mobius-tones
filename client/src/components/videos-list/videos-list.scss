@@ -1,0 +1,38 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.videos {
+
+  display: flex;
+  background-color: black;
+  // flex-direction: row;
+
+    // align-content: center;
+    
+    width: 100%;
+
+    // @include tablet {
+    //   width: 33%;
+    // }
+
+  &__list {
+    margin: auto;
+    
+    // padding-bottom: 56.25%;
+    // display: flex;
+    // align-content: center;
+
+    @include tablet {
+      // width: 33%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    @include desktop {
+      // margin: auto;
+      justify-content: center;
+    }
+  }
+}

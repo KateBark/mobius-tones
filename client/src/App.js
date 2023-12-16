@@ -15,15 +15,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/:videoId" element={<VideoPlayer />} />
-        {/* <Route path="/:mytones" element={<MyTones />} /> */}
         <Route path="/mytones/:id" element={<TonesComponent />} />
-        <Route path="/:channel" element={<Channel />} />
-        {/* <Route path="/videos/:id" element={<VideoPlayer />} /> */}
-        {/* <Route path="/video-player" element={<VideoPlayer />} /> */}
-        
+        {/* Make channel dynamic ( /channel/:id ) once auth set up */}
+        <Route path="/channel" element={<Channel />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

@@ -4,24 +4,32 @@ import { Link } from "react-router-dom";
 function VideoComponent(props) {
   // console.log(props.url)
   // console.log(props.poster)
+  const opts = {
+    height: 315,
+    width: 560
+  };
+  
   return (
-    <li className="video">
+    <div className="video">
       {/* <img src="https://img.youtube.com/vi/oqOghpWHYio&list=OLAK5uy_nb8rNOWorj0XISXKSLgZDxXWMMrJr64M8/0.jpg"></img> */}
       {/* {props.id} */}
       {/* <Link to={`/mytones/${props.videoId}`}> */}
       <Link to={`/${props.videoId}`}>
-        <video controls
+        <video
+        controls
           className="video__video"
           poster={props.poster}
           src={props.url}
+          opts={opts}
           type="video/mp4"
-          frameborder="O"
-          allowFullScreen>
+          // frameborder="O"
+          // allowFullScreen
+          >
         </video>
         <p className="video__title">{props.title}</p>
         <p className="video__artist">{props.artist}</p>
       </Link>
-    </li>
+    </div>
   );
 }
 

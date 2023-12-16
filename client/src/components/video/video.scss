@@ -1,16 +1,71 @@
+@use '../.././styles/partials/mixins' as *;
+@use '../.././styles/partials/variables' as *;
+
 .video {
+  // display: flex;
+  // justify-content: center;
+  
+  // margin: auto;
+  // padding-bottom: 56.25%;
+  // text-align: center;
+  // height: 159px;
+  // background-color: $background-color;
+  // background-color: black;
+  padding: 0 1rem;
+
+  @include tablet {
+    width: 33%;
+  }
+
+  @include desktop {
+    width: 26%;
+    // margin: auto;
+  }
+  
 
   &__video {
-    width: 250px;
-    // padding-top: 56.25%;
+    width: 100%;
+    // margin: auto;
+    // display: flex;
+    // align-content: center;
+    // border-radius: 4px;
+    // padding: 1rem 0;
+    // height: 75%;
+    // aspect-ratio: 16 / 9;
+    // padding-bottom: 56.25%;
+    // object-fit: cover;
+  // object-position: 0 -30px;
+  // height: 286px;
+  // width: 509px;
+  // background-size: 200px 600px;
+
+  // @include tablet {
+  //   width: 33%;
+  // }
   }
 
   &__title {
+    color: $silver-color;
     font-size: .8rem;
     font-weight: bold;
+    font-family: $main-font;
+    text-align: left;
+    padding-left: 1.5rem;
+
+    @include tablet {
+      font-size: 1.2rem;
+    }
   }
 
   &__artist {
+    color: $silver-color;
     font-size: .7rem;
+    font-family: $main-font;
+    text-align: left;
+    padding-left: 1.5rem;
+
+    @include tablet {
+      font-size: 1rem
+    }
   }
 }

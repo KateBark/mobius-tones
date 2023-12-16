@@ -33,6 +33,7 @@ function TonesComponent() {
 
   return (
     <section className="tones">
+      <h1 className="tones__title">Tones You Have Uploaded:</h1>
       <ul className="tones__style"
       // style={{ width: '100%' }}
       >

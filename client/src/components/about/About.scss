@@ -4,7 +4,15 @@
 .about {
   // background-color: #374741;
   background-color: $background-color;
-  padding: 1rem;
+  padding: 1rem 2rem;
+
+  @include tablet {
+    padding: 1rem 8rem;
+  }
+
+  @include desktop {
+    padding: 3rem 16rem;
+  }
 
   &__blurb {
     // color: white;

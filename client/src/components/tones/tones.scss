@@ -1,10 +1,38 @@
-.tones {
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
-  &__style {
-    width: 90%;
+.tones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 1rem;
+
+  @include tablet {
+    padding: 2rem;
+
+    @include desktop {
+      padding: 4rem;
+    }
   }
 
-  &__video {
-    width: 100% !important;
+  &__title {
+    font-family: $main-font;
+    font-size: 1.3rem;
+    color: white;
+    padding-bottom: 1.5rem;
+    width: 300px;
+
+    @include tablet {
+      width: 580px;
+      font-size: 1.65rem;
+      margin-left: 2rem;
+      
+    }
+
+    @include desktop {
+      width: 800px;
+      font-size: 2rem;
+    }
   }
 }

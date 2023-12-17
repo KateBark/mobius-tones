@@ -77,7 +77,7 @@ function ChannelComponent() {
               <label htmlFor="video-description" className="channel__video-url">URL</label>
               <input type="text" name="url" id="video-url"
                 className={urlError === false ? "channel__url-input" : "channel__url-input channel__url-input-error"}
-                placeholder="Paste your url here" />
+                placeholder="Paste your YouTube url here" />
               <div className="channel__cta-container">
                 <div className="channel__button-location">
                   <button type="submit" className="channel__publish-button">

@@ -2,32 +2,26 @@
 @use "../../styles/partials/variables" as *;
 
 .about {
-  // background-color: #374741;
   background-color: $background-color;
   padding: 1rem 2rem;
 
   @include tablet {
-    padding: 1rem 8rem;
+    padding: 1rem 11rem;
   }
 
   @include desktop {
-    padding: 3rem 16rem;
+    padding: 3rem 20rem;
   }
 
   &__blurb {
-    // color: white;
     color: $font-color;
     padding-bottom: 1rem;
-    // font-family: 'Cormorant Garamond', serif;
-
-font-family: 'Jost', sans-serif;
+    font-family: 'Jost', sans-serif;
   }
 
   &__bold-text {
     font-weight: bold;
     font-size: 1.1rem;
-    // font-family: 'Cormorant Garamond', serif;
-
-font-family: 'Jost', sans-serif;
+    font-family: 'Jost', sans-serif;
   }
 }

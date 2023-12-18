@@ -6,14 +6,14 @@ function VideosList({ videos }) {
     <div className="videos">
       <div className="videos__list">
         {videos.map(video => (
-              <VideoComponent
-                key={video.id}
-                videoId={video.id}
-                title={video.title}
-                poster={video.image}
-                url={video.url}
-                artist={video.artist}
-              />
+          <VideoComponent
+            key={video.id}
+            videoId={video.id}
+            title={video.title}
+            poster={video.image}
+            url={video.url}
+            artist={video.artist}
+          />
         ))}
       </div>
     </div>

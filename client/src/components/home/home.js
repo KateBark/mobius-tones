@@ -23,7 +23,7 @@ function HomeComponent() {
       <div className="home__container">
         <VideosList
           videos={videos}
-          />
+        />
       </div>
     </main>
   )

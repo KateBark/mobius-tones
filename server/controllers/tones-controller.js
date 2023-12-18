@@ -11,7 +11,7 @@ const index = (req, res) => {
       res.status(200).json(data);
     })
     .catch(err => res.status(400)
-    .send(`Could not retrieve videos: ${err}`));
+      .send(`Could not retrieve videos: ${err}`));
 }
 
 module.exports = {

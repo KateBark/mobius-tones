@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
+// Post functionality (to upload videos) to be set up
+
 const url = "http://localhost:8080";
 
 function ChannelComponent() {
@@ -34,7 +36,6 @@ function ChannelComponent() {
     if (url === "") {
       setUrlError(true);
     }
-
 
     // add more re field inputs
     const newPost = {

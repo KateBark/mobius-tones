@@ -18,7 +18,7 @@ const singleVideo = (req, res) => {
       if (video) {
         res.json(video);
       } else {
-        res.status(404).json({ error: "Video not found"});
+        res.status(404).json({ error: "Video not found" });
       }
     })
     .catch(error => {

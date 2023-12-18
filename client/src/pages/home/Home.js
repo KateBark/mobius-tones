@@ -1,5 +1,4 @@
 import HomeComponent from "../../components/home/home";
-import "./Home.scss";
 
 function HomePage() {
   return (

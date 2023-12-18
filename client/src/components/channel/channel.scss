@@ -1,18 +1,9 @@
-// .channel {
-//   padding: 1rem;
-
-//   &__title {
-//     font-size: 1.8rem;
-//   }
-// }
-
 @use '../.././styles/partials/mixins' as *;
 @use '../.././styles/partials/variables' as *;
 
 .channel {
   padding: 1rem;
   background-color: $background-color;
-  // display: flex;
   width: 100%;
 
   &__container {
@@ -22,10 +13,6 @@
     @include tablet {
       max-width: 650px;
     }
-
-    // @include desktop {
-    //   max-width: 1300px;
-    // }
   }
 
   &__title {
@@ -35,22 +22,14 @@
     text-align: left;
     padding-bottom: 1rem;
 
-    // @include page-header;
-    // padding-top: 1.3rem;
-    // padding-bottom: 1.3rem;
-
     @include tablet {
       padding: 2rem 2rem 1.7rem 0;
       margin-bottom: 1.5rem;
       margin-left: 2rem;
-      // font-family: "AvenirNextBold";
-      // border-bottom: 1px solid $mercury;
     }
 
     @include desktop {
       margin-left: 0;
-    //   margin-left: 8rem;
-    //   margin-right: 8rem;
     }
   }
 
@@ -66,53 +45,8 @@
       padding-bottom: 1rem;
       flex-direction: row;
       max-width: 1100px;
-      // margin-left: 6rem;
-      // margin-right: 6rem;
     }
   }
-
-  // &__thumbnail-container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding: 0 1rem .7rem 1rem;
-
-  //   @include tablet {
-  //     padding: 0 2rem .7rem 2rem;
-  //   }
-
-  //   @include desktop {
-  //     width: 35%;
-  //     height: 221px;
-  //     // border-bottom: 1px solid $mercury;
-  //     margin-left: 2rem;
-  //     padding-left: 0;
-  //     padding-right: 1.5rem;
-  //   }
-  // }
-
-  // &__thumb-title {
-  //   color: $font-color;
-  //   font-weight: bold;
-  //   font-size: .75rem;
-  //   text-align: left;
-  //   padding-bottom: .5rem;
-  // }
-
-  // &__thumb-image {
-  //   width: 100%;
-  //   // background-color: $mercury;
-  //   border-radius: 4px;
-
-  //   @include tablet {
-  //     width: 50%;
-  //   }
-
-  //   @include desktop {
-  //     width: 100%;
-  //     max-height: 176px;
-  //     max-width: 330px;
-  //   }
-  // }
 
   &__input-container {
     padding: 0 1rem 1rem 1rem;
@@ -141,8 +75,6 @@
   }
 
   &__title-input {
-    // background-color: $alabaster;
-    // color: $brainflix-black;
     border-radius: 4px;
     border: 1.5px solid $silver-color;
     padding: .65rem;
@@ -157,7 +89,6 @@
   }
 
   &__title-input::placeholder {
-    // color: $brainflix-black;
     font-size: .85rem;
   }
 
@@ -184,10 +115,7 @@
   }
 
   &__description-input {
-    // background-color: $alabaster;
-    // color: $brainflix-black;
     border-radius: 4px;
-    // border: 2px solid $accent-color;
     border: 1.5px solid $silver-color;
     padding: .5rem .5rem 4rem .5rem;
   }
@@ -197,7 +125,6 @@
   }
 
   &__description-input::placeholder {
-    // color: $silver-color;
     font-size: .85rem;
   }
 
@@ -249,7 +176,6 @@
 
     @include tablet {
       flex-direction: row;
-      // border-top: 1px solid $mercury;
       align-items: center;
       justify-content: right;
       padding: .5rem 0rem .5rem 0rem;
@@ -263,8 +189,6 @@
     height: 40px;
     order: 1;
     background-color: $accent-color;
-    // background-color: $brainflix-blue;
-    // background-image: url('../../assets/Icons/publish.svg');
     background-repeat: no-repeat;
     background-position: 5%;
     background-size: 16px;
@@ -277,10 +201,6 @@
       order: 2;
     }
   }
-
-  // &__publish-button:hover {
-    // background-color: $brainflix-darkblue;
-  // }
 
   &__publish-button-text {
     color: white;
@@ -302,7 +222,6 @@
   }
 
   &__cancel-button {
-    // color: $brainflix-blue;
     background: none;
     border: none;
     font-weight: bold;
@@ -321,7 +240,6 @@
   }
 
   &__cancel-button:hover {
-    // color: $brainflix-darkblue;
     cursor: pointer;
   }
 }

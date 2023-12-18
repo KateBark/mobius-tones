@@ -10,7 +10,6 @@ const index = (_req, res) => {
 
 const singleVideo = (req, res) => {
   const { id } = req.params;
-  console.log("Single video Id: ", id);
 
   knex("videos")
     .where({ id })

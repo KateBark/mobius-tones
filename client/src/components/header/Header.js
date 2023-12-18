@@ -4,7 +4,6 @@ import { NavLink, Link, useParams } from "react-router-dom";
 
 function Header() {
   const { id } = useParams();
-  // console.log(id)
   return (
     <header className="header">
       <Link to="/">

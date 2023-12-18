@@ -1,53 +1,47 @@
 import YouTube from "react-youtube";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import "./VideoPlayer.scss";
+import VideosData from "../../data/videos.json"
 
-const url = "http://localhost:8080";
+// const url = "http://localhost:8080";
 
 function VideoPlayer() {
   const [video, setVideo] = useState(null);
   const { videoId } = useParams();
 
-  // console.log("helloooooo")
-
+  // remove  the code between here and the line when db confirmed working
   useEffect(() => {
-    // console.log("videoId: ", videoId)
-    console.log(url.channel)
-    // const fetchVideoData = () => {
-    axios.get(`${url}/${videoId}`)
-      .then(response => {
-        console.log(response.data);
-        setVideo(response.data);
-      })
-      .catch(error => {
-        console.error("Error getting video data:", error);
-      });
-    // };
-    // fetchVideoData();
+    const selectedVideo = VideosData.find(videoEl => videoEl.id === videoId);
+    setVideo(selectedVideo);
   }, [videoId]);
+
+  // ______________________________________________________
+
+  // useEffect(() => {
+  //   axios.get(`${url}/${videoId}`)
+  //     .then(response => {
+  //       setVideo(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error getting video data:", error);
+  //     });
+  // }, [videoId]);
 
   if (!video) {
     return <div>Loading...</div>
   }
 
-  // const opts = {
-  //   height: 315,
-  //   width: 560
-  // };
-
   return (
     <div className="video-player__styles">
       <div className="video-player">
-
-        <YouTube className="video-player__size" videoId={video.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]}
-        //  opts={opts} 
+        <YouTube
+          className="video-player__size"
+          videoId={video.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]}
         />
-        {/* <YouTube videoId={url.channel} /> */}
         <h3 className="video-player__title">{video.title}</h3>
         <p className="video-player__artist">{video.artist}</p>
-
       </div>
       <div className="video-player__lyrics-container">
         <h6 className="video-player__lyrics-title">Lyrics:</h6>

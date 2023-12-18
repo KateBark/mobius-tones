@@ -60,10 +60,6 @@ function ChannelComponent() {
       <div className="channel__container">
         <h1 className="channel__title">Upload Video</h1>
         <div className="channel__info-container">
-          {/* <div className="channel__thumbnail-container">
-          <p className="channel__thumb-title">VIDEO THUMBNAIL</p> */}
-          {/* <img className="channel__thumb-image" src={Thumbnail} alt="thumbnail" /> */}
-          {/* </div> */}
           <div className="channel__input-container">
             <form className="channel__form-container" onSubmit={handleSubmit}>
               <label htmlFor="title" className="channel__video-title">SONG TITLE</label>

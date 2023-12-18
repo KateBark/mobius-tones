@@ -3,60 +3,41 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
+import VideosData from "../../data/videos.json"
+import Members from "../../data/members.json"
 
-const url = "http://localhost:8080";
+// const url = "http://localhost:8080";
 
 function TonesComponent() {
   const [tones, setTones] = useState([]);
 
-  // const params = useParams();
-  const { id } = useParams();
-  console.log(id)
-
+  // remove code between here line when db confirmed working
   useEffect(() => {
-    // axios.get(`${url}/:mytones`)
-    // axios.get(`${url}/${params.mytones}`)
-    axios.get(`${url}/mytones/${id}`)
-      // axios.get("http://localhost:8080/mytones/id")
-      .then(results => {
-        // console.log(results.data[0].title);
-        const selectedTones = results.data;
-        setTones(selectedTones);
-        return selectedTones;
-      })
-  }, [id]);
+    const selectedTones = VideosData.filter(videoEl => videoEl.member_id === "1");
+    setTones(selectedTones);
+  }, []);
+  // _________________________________
 
-  // const opts = {
-  //   height: "315",
-  //   width: "560"
-  // }
+  // const { id } = useParams();
+
+  // useEffect(() => {
+  //   axios.get(`${url}/mytones/${id}`)
+  //     .then(results => {
+  //       const selectedTones = results.data;
+  //       setTones(selectedTones);
+  //       return selectedTones;
+  //     })
+  // }, [id]);
 
   return (
     <section className="tones">
       <h1 className="tones__title">Tones You Have Uploaded:</h1>
       <ul className="tones__style"
-      // style={{ width: '100%' }}
       >
         {tones.map((tone) => (
-          // <video
-          <YouTube 
-          // opts={opts} 
-          className="tones__video" 
-          videoId={tone.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]} />
-
-            // controls
-            // className="tones__style"
-            // key={tone.id}
-            // url={tone.url}
-            // videoId={tone.id}
-            // title={tone.title}
-            // poster={tone.image}
-            // artist={tone.artist}>
-            // <h3>{tone.title}</h3>
-            // <p>{tone.artist}</p>
-            
-          
-          // </YouTube>
+          <YouTube
+            className="tones__video"
+            videoId={tone.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]} />
         ))}
       </ul>
     </section>

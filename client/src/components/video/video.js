@@ -2,29 +2,19 @@ import "./video.scss";
 import { Link } from "react-router-dom";
 
 function VideoComponent(props) {
-  // console.log(props.url)
-  // console.log(props.poster)
-  const opts = {
-    height: 315,
-    width: 560
-  };
-  
+
   return (
     <div className="video">
-      {/* <img src="https://img.youtube.com/vi/oqOghpWHYio&list=OLAK5uy_nb8rNOWorj0XISXKSLgZDxXWMMrJr64M8/0.jpg"></img> */}
-      {/* {props.id} */}
-      {/* <Link to={`/mytones/${props.videoId}`}> */}
-      <Link to={`/${props.videoId}`}>
+      <Link to={`http://localhost:3000/${props.videoId}`}>
+        {/* // remove above line and comment-in below line when db operational */}
+      {/* <Link to={`/${props.videoId}`}> */}
         <video
-        controls
+          controls
           className="video__video"
           poster={props.poster}
           src={props.url}
-          opts={opts}
           type="video/mp4"
-          // frameborder="O"
-          // allowFullScreen
-          >
+        >
         </video>
         <p className="video__title">{props.title}</p>
         <p className="video__artist">{props.artist}</p>

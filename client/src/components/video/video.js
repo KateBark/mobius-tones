@@ -5,9 +5,9 @@ function VideoComponent(props) {
 
   return (
     <div className="video">
-      <Link to={`http://localhost:3000/${props.videoId}`}>
+      {/* <Link to={`http://localhost:3000/${props.videoId}`}> */}
         {/* // remove above line and comment-in below line when db operational */}
-        {/* <Link to={`/${props.videoId}`}> */}
+        <Link to={`/${props.videoId}`}>
         <video
           controls
           className="video__video"

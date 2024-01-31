@@ -6,28 +6,28 @@ import YouTube from "react-youtube";
 import VideosData from "../../data/videos.json"
 import Members from "../../data/members.json"
 
-// const url = "http://localhost:8080";
+const url = "http://localhost:8080";
 
 function TonesComponent() {
   const [tones, setTones] = useState([]);
 
   // remove code between here line when db confirmed working
-  useEffect(() => {
-    const selectedTones = VideosData.filter(videoEl => videoEl.member_id === "1");
-    setTones(selectedTones);
-  }, []);
+  // useEffect(() => {
+  //   const selectedTones = VideosData.filter(videoEl => videoEl.member_id === "1");
+  //   setTones(selectedTones);
+  // }, []);
   // _________________________________
 
-  // const { id } = useParams();
+  const { id } = useParams();
 
-  // useEffect(() => {
-  //   axios.get(`${url}/mytones/${id}`)
-  //     .then(results => {
-  //       const selectedTones = results.data;
-  //       setTones(selectedTones);
-  //       return selectedTones;
-  //     })
-  // }, [id]);
+  useEffect(() => {
+    axios.get(`${url}/mytones/${id}`)
+      .then(results => {
+        const selectedTones = results.data;
+        setTones(selectedTones);
+        return selectedTones;
+      })
+  }, [id]);
 
   return (
     <section className="tones">

@@ -2,21 +2,22 @@ import "./home.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import VideosList from "../videos-list/videos-list";
-import VideosData from "../../data/videos.json"
+// import VideosData from "../../data/videos.json"
 
-// const url = "http://localhost:8080";
+const url = "http://localhost:8080";
 
 function HomeComponent() {
   // remove VideosData from state when db confirmed - revert to []
-  const [videos] = useState(VideosData);
+  // const [videos] = useState(VideosData);
+  const [videos, setVideos] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get(`${url}`)
-  //     .then(results => {
-  //       setVideos(results.data);
-  //       return results;
-  //     })
-  // }, [])
+  useEffect(() => {
+    axios.get(`${url}`)
+      .then(results => {
+        setVideos(results.data);
+        return results;
+      })
+  }, [])
 
   return (
     <main className="home">

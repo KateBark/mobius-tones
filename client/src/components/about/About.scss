@@ -16,12 +16,12 @@
   &__blurb {
     color: $font-color;
     padding-bottom: 1rem;
-    font-family: 'Jost', sans-serif;
+    font-family: $main-font;
   }
 
   &__bold-text {
     font-weight: bold;
     font-size: 1.1rem;
-    font-family: 'Jost', sans-serif;
+    font-family: $main-font;
   }
 }

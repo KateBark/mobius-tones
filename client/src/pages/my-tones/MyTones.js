@@ -1,5 +1,4 @@
 import MyTones from "../../components/tones/tones";
-import "./MyTones.scss";
 
 function TonesComponent() {
   return (

@@ -1,0 +1,46 @@
+@use '../.././styles/partials/mixins' as *;
+@use '../.././styles/partials/variables' as *;
+
+.login {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-family: $main-font;
+  background-color: black;
+
+  &__title {
+    color: $font-color;
+  }
+
+  &__form {
+
+  }
+
+  &__user-label {
+    color: $font-color;
+  }
+
+  &__user-input {
+
+  }
+
+  &__user-input::placeholder {
+    
+  }
+
+  &__password-label {
+    color: $font-color;
+  }
+
+  &__password-input {
+
+  }
+
+  &__password-input::placeholder {
+
+  }
+
+  &__button {
+
+  }
+}

@@ -5,7 +5,7 @@ function VideosList({ videos }) {
   return (
     <div className="videos">
       <div className="videos__list">
-        {videos.map(video => (
+        {videos.slice().reverse().map(video => (
           <VideoComponent
             key={video.id}
             videoId={video.id}

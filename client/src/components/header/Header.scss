@@ -1,4 +1,5 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .header {
   background-color: #374741;
@@ -41,17 +42,26 @@
     padding: .5rem 1rem;
     border-radius: 50px;
     color: rgb(173, 168, 168);
+    margin-right: .5rem;
 
     @include tablet {
       padding: .5rem 2rem;
     }
   }
 
-  &__button-text {
+  &__button:hover {
+    background-color: $silver-color;
+    color: black;
+  }
 
+  &__button-text {
     font-size: .8rem;
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
+
+    @include tablet {
+      font-size: .9rem;
+    }
   }
 
   &__button-active {

@@ -1,9 +1,8 @@
 import "./channel.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-
-// Post functionality (to upload videos) to be set up
+import BackIcon from "../../assets/arrow_back-24px.svg";
 
 const url = "http://localhost:8080";
 
@@ -22,7 +21,7 @@ function ChannelComponent() {
     // add more here re field inputs
     const title = event.target.title.value;
     const artist = event.target.artist.value;
-    url = event.target.url.value;
+    const inputUrl = event.target.url.value;
 
     // add more re field inputs
     if (title === "") {
@@ -33,31 +32,45 @@ function ChannelComponent() {
       setArtistError(true);
     }
 
-    if (url === "") {
+    if (inputUrl === "") {
       setUrlError(true);
+    }
+
+    // update re field inputs
+    if (!title || !artist || !url) {
+      alert("Please fill in all fields");
+      return;
     }
 
     // add more re field inputs
     const newPost = {
       title: title,
       artist: artist,
-      url: url
+      url: inputUrl
     }
 
     // hard-coding user "1", update with useParams() to make dynamic
-    axios.post(`${url}/channel/1`)
-      .then(results => setPosts(results.data));
-
-    // update re field inputs
-    if (!title || !artist || !url) {
-      alert("Please fill in all fields");
-      return false;
-    }
-    navigate("/");
-    alert("Upload successful!");
+    axios.post(`${url}/channel`, newPost)
+      .then(results => {
+        setPosts(results.data);
+        navigate("/");
+        alert("Upload successful!");
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
+
   return (
     <section className="channel">
+      <div className="channel__button-container">
+        <NavLink
+          to={`/`}
+          className="channel__back-button"
+        >
+          <img src={BackIcon} alt="return to previous page" className="channel__button-img" />
+        </NavLink>
+      </div>
       <div className="channel__container">
         <h1 className="channel__title">Upload Video</h1>
         <div className="channel__info-container">
@@ -67,11 +80,11 @@ function ChannelComponent() {
               <input type="text" name="title" id="video-title"
                 className={titleError === false ? "channel__title-input" : "channel__title-input channel__title-input-error"}
                 placeholder="Add a title to your video" />
-              <label htmlFor="video-description" className="channel__video-description">ARTIST / BAND NAME</label>
-              <input type="text" name="description" id="video-description"
+              <label htmlFor="artist" className="channel__video-description">ARTIST / BAND NAME</label>
+              <input type="text" name="artist" id="video-description"
                 className={artistError === false ? "channel__description-input" : "channel__description-input channel__description-input-error"}
                 placeholder="Add your artist or band name here" />
-              <label htmlFor="video-description" className="channel__video-url">URL</label>
+              <label htmlFor="url" className="channel__video-url">URL</label>
               <input type="text" name="url" id="video-url"
                 className={urlError === false ? "channel__url-input" : "channel__url-input channel__url-input-error"}
                 placeholder="Paste your YouTube url here" />
@@ -81,7 +94,7 @@ function ChannelComponent() {
                     <p className="channel__publish-button-text">PUBLISH</p>
                   </button>
                 </div>
-                <button className="channel__cancel-button">CANCEL</button>
+                {/* <button className="channel__cancel-button">CANCEL</button> */}
               </div>
             </form>
           </div>

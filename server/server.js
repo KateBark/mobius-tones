@@ -17,9 +17,8 @@ app.use("/", videosRoute);
 const tonesRoute = require("./routes/tones");
 app.use("/mytones", tonesRoute);
 
-// Channel (upload functionality) in progress
-// const channelRoute = require("./routes/channel");
-// app.use("/channel").channelRoute;
+const channelRoute = require("./routes/channel");
+app.use("/channel", channelRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);

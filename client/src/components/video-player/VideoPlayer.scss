@@ -3,12 +3,75 @@
 
 .video-player {
 
-  &__styles {
+  &__section {
     background-color: $background-color;
-    padding: 2rem 1rem;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      align-items: center;
+    }
+  }
+
+  &__styles {
+    padding: 0 1rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: left;
+    padding: 1rem 1rem 1rem 0;
+    width: 300px;
+
+    @include tablet {
+      width: 580px;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    @include desktop {
+      width: 800px;
+    }
+  }
+
+  &__back-button {
+    display: flex;
+    background-color: $accent-color;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: $silver-color;
+    background-position: 5%;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      width: 50px;
+      height: 45px;
+    }
+  }
+
+  &__back-button:hover {
+    cursor: pointer;
+    background-color: $silver-color;
+    color: black;
+  }
+
+  &__button-img {
+    transform:scale(.75);
   }
 
   &__title {
@@ -25,8 +88,6 @@
       font-size: 1.9rem;
     }
   }
-
-
 
   &__artist {
     font-family: $main-font;

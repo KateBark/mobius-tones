@@ -1,5 +1,29 @@
+@use '../.././styles/partials/mixins' as *;
+@use '../.././styles/partials/variables' as *;
+
 .home {
-  width: 100%;
+
+  &__quote-container {
+    background-color: black;
+  }
+
+  &__quote {
+    color: $font-color;
+    font-family: $main-font;
+    text-align: center;
+    padding: 2rem;
+    font-size: .8rem;
+
+    @include tablet {
+      font-size: .95rem;
+      padding: 2.5rem;
+    }
+
+    @include desktop {
+      font-size: 1.1rem;
+      padding: 2.5rem;
+    }
+  }
 
   &__container {
     display: flex;

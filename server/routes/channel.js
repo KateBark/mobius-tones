@@ -1,8 +1,6 @@
-// To be completed
+const router = require("express").Router();
+const channelController = require("../controllers/channel-controller");
 
-// const router = require("express").Router();
-// const channelController = require("../controllers/channel-controller");
+router.route("/").post(channelController.index);
 
-// router.route("/channel").post(channelController.index);
-
-// module.exports = router;
+module.exports = router;

@@ -3,25 +3,43 @@
 
 .about {
   background-color: $background-color;
-  padding: 1rem 2rem;
+  padding: 2rem;
 
   @include tablet {
-    padding: 1rem 11rem;
+    padding: 4rem 11rem;
   }
 
   @include desktop {
-    padding: 3rem 20rem;
+    padding: 5rem 20rem;
   }
 
   &__blurb {
     color: $font-color;
     padding-bottom: 1rem;
     font-family: $main-font;
+
+    @include tablet {
+      font-size: 1.3rem;
+      padding-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      font-size: 1.6rem;
+      padding-bottom: 2rem;
+    }
   }
 
   &__bold-text {
     font-weight: bold;
     font-size: 1.1rem;
     font-family: $main-font;
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+
+    @include desktop {
+      font-size: 1.6rem;
+    }
   }
 }

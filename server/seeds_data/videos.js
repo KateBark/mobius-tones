@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     id: 6,
-    title: "You Keep Me Hangin' On (The Supremes cover",
+    title: "You Keep Me Hangin' On (The Supremes cover)",
     url: 'https://www.youtube.com/watch?v=kQJoOOTKPmw&list=PLcssvN4_zv_V3Jl4FAEueQnrW0eEg585p&index=3',
     image: 'https://img.youtube.com/vi/kQJoOOTKPmw/0.jpg',
     artist: "Emerson Fyne",
@@ -89,7 +89,7 @@ module.exports = [
   },
   {
     id: 12,
-    title: "Animus Rise (Behind the scenes",
+    title: "Animus Rise (Behind the scenes)",
     url: 'https://www.youtube.com/watch?v=1_rG3X1kXp0',
     image: 'https://img.youtube.com/vi/1_rG3X1kXp0/0.jpg',
     artist: "Emerson Fyne",

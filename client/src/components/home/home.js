@@ -21,9 +21,9 @@ function HomeComponent() {
 
   return (
     <main className="home">
-      <div className="home__quote-container">
+      {/* <div className="home__quote-container">
         <h3 className="home__quote">"The secret to getting ahead is getting started."<br></br>~ Mark Twain</h3>
-      </div>
+      </div> */}
       <div className="home__container">
         <VideosList
           videos={videos}

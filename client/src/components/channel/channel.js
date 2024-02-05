@@ -9,7 +9,6 @@ const url = "http://localhost:8080";
 function ChannelComponent() {
   const [posts, setPosts] = useState([]);
 
-  // update these to reflect form fields
   const [titleError, setTitleError] = useState(false);
   const [artistError, setArtistError] = useState(false);
   const [urlError, setUrlError] = useState(false);
@@ -18,12 +17,10 @@ function ChannelComponent() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // add more here re field inputs
     const title = event.target.title.value;
     const artist = event.target.artist.value;
     const inputUrl = event.target.url.value;
 
-    // add more re field inputs
     if (title === "") {
       setTitleError(true);
     }
@@ -36,25 +33,23 @@ function ChannelComponent() {
       setUrlError(true);
     }
 
-    // update re field inputs
-    if (!title || !artist || !url) {
-      alert("Please fill in all fields");
+    if (!title || !artist || !inputUrl) {
+      alert("🦄 Please fill in all fields");
       return;
     }
 
-    // add more re field inputs
     const newPost = {
       title: title,
       artist: artist,
       url: inputUrl
     }
 
-    // hard-coding user "1", update with useParams() to make dynamic
+    // hard-coded user "1" on back-end. Will update with useParams() to make dynamic
     axios.post(`${url}/channel`, newPost)
       .then(results => {
         setPosts(results.data);
         navigate("/");
-        alert("Upload successful!");
+        alert("⭐ Upload successful!");
       })
       .catch(error => {
         console.error(error);
@@ -63,6 +58,7 @@ function ChannelComponent() {
 
   return (
     <section className="channel">
+      
       <div className="channel__button-container">
         <NavLink
           to={`/`}

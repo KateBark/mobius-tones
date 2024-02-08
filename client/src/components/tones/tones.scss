@@ -16,6 +16,21 @@
     }
   }
 
+    &__style {
+      margin: auto;
+  
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+        // margin: 0;
+      }
+  
+      @include desktop {
+        justify-content: center;
+      }
+    }
+
   &__button-container {
     display: flex;
     justify-content: left;
@@ -88,6 +103,10 @@
       font-size: 2rem;
     }
   }
+
+  // &__container {
+
+  // }
 
   &__buttons-container {
     display: flex;

@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import YouTube from "react-youtube";
 import BackIcon from "../../assets/arrow_back-24px.svg";
-// import VideosData from "../../data/videos.json"
-// import Members from "../../data/members.json"
+import SingleToneComp from "../singletone/singletone";
 
 const url = "http://localhost:8080";
 
@@ -30,13 +29,13 @@ function TonesComponent() {
       })
   }, [id]);
 
-  const handleEdit = (toneId) => {
-    // logic to be added for editing video - also update info in database
-  }
+  // const handleEdit = (toneId) => {
+  // logic to be added for editing video - also update info in database
+  // }
 
-  const handleDelete = (toneId) => {
-    // logic to be added for deleting video - also delete from database (or just remove from site?)
-  }
+  // const handleDelete = (toneId) => {
+  // logic to be added for deleting video - also delete from database (or just remove from site?)
+  // }
 
   return (
     <section className="tones">
@@ -49,7 +48,36 @@ function TonesComponent() {
         </NavLink>
       </div>
       <h1 className="tones__title">Tones You Have Uploaded:</h1>
-      <ul className="tones__style">
+      <div className="tones__style">
+        {tones.slice().reverse().map((tone) => (
+          <div className="tones__container">
+            <SingleToneComp
+              key={tone.id}
+              // videoId={tone.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]}
+              videoId={tone.id}
+              poster={tone.image}
+              url={tone.url}
+              artist={tone.artist}
+              title={tone.title}
+            />
+            <div className="tones__buttons-container">
+              <button
+                type="button"
+                className="tones__button"
+              // onClick={() => handleEdit(tone.id)}
+              >Edit</button>
+              <button
+                type="button"
+                className="tones__button"
+              // onClick={() => handleDelete(tone.id)}
+              >Delete</button>
+            </div>
+          </div>
+        ))}
+
+
+      </div>
+      {/* <ul className="tones__style">
         {tones.slice().reverse().map((tone) => (
           <>
             <YouTube
@@ -58,12 +86,20 @@ function TonesComponent() {
               videoId={tone.url.split("https://www.youtube.com/watch?v=")[1].split("&")[0]}
             />
             <div className="tones__buttons-container">
-              <button type="button" className="tones__button" onClick={() => handleEdit(tone.id)}>Edit</button>
-              <button type="button" className="tones__button" onClick={() => handleDelete(tone.id)}>Delete</button>
+              <button
+                type="button"
+                className="tones__button"
+                // onClick={() => handleEdit(tone.id)}
+              >Edit</button>
+              <button
+                type="button"
+                className="tones__button"
+                // onClick={() => handleDelete(tone.id)}
+              >Delete</button>
             </div>
           </>
         ))}
-      </ul>
+      </ul> */}
     </section>
   )
 }

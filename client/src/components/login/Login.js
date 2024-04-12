@@ -6,7 +6,7 @@ function Login({ onLogin }) {
   const [password, setPassword] = useState("");
 
   const handleLogin = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     if (username && password) {
       onLogin(username);

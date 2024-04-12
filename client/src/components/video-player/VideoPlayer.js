@@ -4,21 +4,12 @@ import { useParams, NavLink } from "react-router-dom";
 import axios from "axios";
 import "./VideoPlayer.scss";
 import BackIcon from "../../assets/arrow_back-24px.svg"
-// import VideosData from "../../data/videos.json"
 
 const url = "http://localhost:8080";
 
 function VideoPlayer() {
   const [video, setVideo] = useState(null);
   const { videoId } = useParams();
-
-  // remove  the code between here and the line when db confirmed working
-  // useEffect(() => {
-  //   const selectedVideo = VideosData.find(videoEl => videoEl.id === videoId);
-  //   setVideo(selectedVideo);
-  // }, [videoId]);
-
-  // ______________________________________________________
 
   useEffect(() => {
     axios.get(`${url}/${videoId}`)

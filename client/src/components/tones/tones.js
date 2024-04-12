@@ -22,13 +22,13 @@ function TonesComponent() {
   }, [id]);
 
   const handleEdit = (toneId) => {
-    alert("Edit functionality coming soon to a theatre near you!")
-  // logic to be added for editing video - also update info in database
+    alert("Edit functionality coming soon to a theatre near you! 🚀")
+    // logic to be added for editing video - also update info in database
   }
 
   const handleDelete = (toneId) => {
-    alert("Delete functionality coming soon to a theatre near you!")
-  // logic to be added for deleting video - also delete from database (or just remove from site?)
+    alert("Delete functionality coming soon to a theatre near you! 🚀")
+    // logic to be added for deleting video - also delete from database (or just remove from site?)
   }
 
   return (
